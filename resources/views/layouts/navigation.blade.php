@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-gray-950 border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex flex-1">
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('recipes.index') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-pink-500" />
@@ -12,16 +12,19 @@
                     <x-nav-link :href="route('recipes.index')" :active="request()->routeIs('recipes.*')">
                         Receptai
                     </x-nav-link>
-
+                
+                    <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.*')">
+                        Blog
+                    </x-nav-link>
+                
                     @auth
                         <x-nav-link :href="route('admin.recipes.index')" :active="request()->routeIs('admin.recipes.*')">
                             Admin
                         </x-nav-link>
                     @endauth
                 </div>
-            </div>
 
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
+            <div class="hidden sm:flex sm:items-center sm:ms-auto">
                 @auth
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
@@ -74,7 +77,11 @@
             <x-responsive-nav-link :href="route('recipes.index')" :active="request()->routeIs('recipes.*')">
                 Receptai
             </x-responsive-nav-link>
-
+        s
+            <x-responsive-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.*')">
+                Blog
+            </x-responsive-nav-link>
+        
             @auth
                 <x-responsive-nav-link :href="route('admin.recipes.index')" :active="request()->routeIs('admin.recipes.*')">
                     Admin
