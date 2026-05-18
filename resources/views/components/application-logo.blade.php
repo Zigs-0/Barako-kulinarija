@@ -1,3 +1,3 @@
-<img {{ $attributes->merge(['class' => 'h-20 w-auto']) }}
-     src="{{ asset('images/logo.png') }}"
-     alt="Barako kulinarija">
+<img src="{{ asset('images/logo.png') }}"
+     alt="Barako kulinarija"
+     {{ $attributes->merge(['class' => 'h-27 w-auto']) }}>
