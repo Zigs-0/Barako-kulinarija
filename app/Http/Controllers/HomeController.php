@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recipe;
+use App\Models\BlogPost;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,16 +13,14 @@ class HomeController extends Controller
         $latestRecipes = Recipe::query()
             ->with('category')
             ->latest()
-            ->take(9)
+            ->take(3)
             ->get();
 
-        $videoRecipes = Recipe::query()
-            ->whereNotNull('video_path')
-            ->orWhereNotNull('video_url')
+        $latestBlogPosts = BlogPost::query()
             ->latest()
-            ->take(6)
+            ->take(3)
             ->get();
 
-        return view('home', compact('latestRecipes', 'videoRecipes'));
+        return view('home', compact('latestRecipes', 'latestBlogPosts'));
     }
 }

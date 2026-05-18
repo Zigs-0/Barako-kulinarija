@@ -1,10 +1,10 @@
 <nav x-data="{ open: false }" class="bg-gray-950 border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between h-30">
             <div class="flex flex-1">
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('home') }}">
-                        <x-application-logo class="block h-20 w-auto fill-current text-pink-500" />
+                        <x-application-logo class="block h-24 w-auto fill-current text-pink-500" />
                     </a>
                 </div>
 
