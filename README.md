@@ -160,7 +160,7 @@ flowchart TD
     F --> G[Tailwind CSS + Vite]
     C --> H[Storage]
     H --> I[Video failai]
-
+```
 ---
 
 ## Projekto struktūra
